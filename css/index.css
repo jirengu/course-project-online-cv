@@ -5,11 +5,15 @@
 }
 
 
+
+
 #page {
   height: 100vh;
   overflow: auto;
   scroll-behavior: smooth; 
 }
+
+
 
 #page {
   position: relative;
@@ -86,6 +90,22 @@
   background: linear-gradient(to right, #70B0EE 50%, #E4667D 50%);
 }
 
+.contact {
+  position: fixed;
+  right: 145px;
+  top: 50px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #70B0EE;
+  margin-left: 10px;
+}
+
+.contact .iconfont {
+  font-size: 20px;
+}
+
 nav {
   position: fixed;
   left: 50%;
@@ -141,10 +161,11 @@ nav::after {
 section {
   display: flex;
   height: 100vh;
+  min-height: 600px;
   padding: 200px 120px;
 }
 
-section main {
+section .main {
   flex: 1;
 }
 
@@ -177,4 +198,23 @@ section .detail {
 section .detail p {
   margin-top: 10px;
   font-weight: 200;
+}
+
+section .download {
+  margin-top: 20px;
+}
+
+section .download  a{
+  color: #E4667D;
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid #E4667D;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity .3s;
+}
+
+section .download  a:hover {
+  opacity: 1;
 }

@@ -2,26 +2,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all .3s;
 }
 
 
+.about {
+  --themeColor1: #34421E;
+  --themeColor2: #C19434;
+  --textColor: #C19434;
+  --bgColor: #F1F1EF; 
+}
 
-#page {
+.component {
+  --themeColor1: #E4667D;
+  --themeColor2: #70B0EE;
+  --textColor: #666;  
+  --bgColor: #fff url(../img/bg.svg) 0 0 no-repeat;
+}
 
+.framework {
+  --themeColor1: #222;
+  --themeColor2: #555;
+  --textColor: #666;  
+  --bgColor: #fff url(../img/bg.svg) 0 0 no-repeat;
+}
+
+.miniapp {
+  --themeColor1: #34421E;
+  --themeColor2: #C19434;
+  --textColor: #C19434;
+  --bgColor: #F1F1EF; 
+}
+
+.wheels {
+  --themeColor1: #E4667D;
+  --themeColor2: #70B0EE;
+  --textColor: #666;  
+  --bgColor: #fff url(../img/bg.svg) 0 0 no-repeat;
 }
 
 
 
 #page {
   position: relative;
+  border-top: 10px solid var(--themeColor1);
+  border-left: 10px solid var(--themeColor2);
+  border-right: 10px solid var(--themeColor1);
+  border-bottom: 10px solid var(--themeColor2);  
+  background: var(--bgColor); /*url(../img/bg.svg) 0 0 no-repeat; */
   height: 100vh;
   overflow: auto;
   scroll-behavior: smooth; 
-  border-top: 16px solid #E4667D;
-  border-left: 16px solid #70B0EE;
-  border-right: 16px solid #E4667D;
-  border-bottom: 16px solid #70B0EE;  
-  background: url(../img/bg.svg) 0 0 no-repeat; 
+  color: var(--textColor);
 }
 
 #page::before {
@@ -32,8 +64,8 @@
   content: '';
   display: block;
   width: 25%;
-  height: 16px;
-  background-color: #70B0EE;
+  height: 10px;
+  background-color: var(--themeColor2);
   transition: width .3s;
 }
 
@@ -46,8 +78,8 @@
   content: '';
   display: block;
   width: 25%;
-  height: 16px;
-  background-color: #E4667D;
+  height: 10px;
+  background-color: var(--themeColor1);
   transition: width .3s;
 }
 
@@ -87,7 +119,23 @@
   color: #fff;
   font-size: 29px;
   font-family: cursive, 'Courier New', Courier, monospace;
-  background: linear-gradient(to right, #70B0EE 50%, #E4667D 50%);
+  background: linear-gradient(to right, var(--themeColor2) 50%, var(--themeColor1) 50%);
+}
+
+.contact {
+  position: fixed;
+  right: 145px;
+  top: 50px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: var(--themeColor2);
+  margin-left: 10px;
+}
+
+.contact .iconfont {
+  font-size: 20px;
 }
 
 nav {
@@ -95,7 +143,7 @@ nav {
   left: 50%;
   bottom: 100px;
   transform: translateX(-50%);
-  border-bottom: 1px solid #E4667D;
+  border-bottom: 1px solid var(--themeColor1);
   display: flex;
   width: 70%;
   min-width: 800px;
@@ -104,7 +152,7 @@ nav > a {
   flex: 1;
   padding-bottom: 10px;
   font-size: 14px;
-  color: #666;
+  color: var(--textColor);
   text-decoration: none;
   font-family: cursive, 'Courier New', Courier, monospace;
   text-align: center;
@@ -117,7 +165,7 @@ nav::after {
   bottom: -4px;
   width: calc(100%/5);
   height: 3px;
-  background: #E4667D;
+  background: var(--themeColor1);
   transition: left .3s;
 }
 
@@ -145,10 +193,11 @@ nav::after {
 section {
   display: flex;
   height: 100vh;
+  min-height: 600px;
   padding: 200px 120px;
 }
 
-section main {
+section .main {
   flex: 1;
 }
 
@@ -163,17 +212,17 @@ section figure img {
 
 section h2 {
   font-size: 30px;
-  color: #70B0EE;
+  color: var(--themeColor2);
 }
 
 section .labels {
-  color: #666;
+  color: var(--textColor);
   font-size: 12px;
   margin-top: 20px;
 }
 
 section .detail {
-  color: #666;
+  color: var(--textColor);
   font-size: 16px;
   margin-top: 20px;
 }
@@ -181,4 +230,23 @@ section .detail {
 section .detail p {
   margin-top: 10px;
   font-weight: 200;
+}
+
+section .download {
+  margin-top: 20px;
+}
+
+section .download  a{
+  color: var(--themeColor1);
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid var(--themeColor1);
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity .3s;
+}
+
+section .download  a:hover {
+  opacity: 1;
 }
