@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#page {
+
+}
+
+
+
+#page {
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  scroll-behavior: smooth; 
+  border-top: 16px solid #E4667D;
+  border-left: 16px solid #70B0EE;
+  border-right: 16px solid #E4667D;
+  border-bottom: 16px solid #70B0EE;  
+  background: url(../img/bg.svg) 0 0 no-repeat; 
+}
+
+#page::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  content: '';
+  display: block;
+  width: 25%;
+  height: 16px;
+  background-color: #70B0EE;
+  transition: width .3s;
+}
+
+
+
+#page::after {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  content: '';
+  display: block;
+  width: 25%;
+  height: 16px;
+  background-color: #E4667D;
+  transition: width .3s;
+}
+
+#page.about::before,
+#page.about::after {
+  width:15%;
+}
+
+#page.component::before,
+#page.component::after {
+  width: 35%;
+}
+
+#page.framework::before,
+#page.framework::after {
+  width: 50%;
+}
+
+#page.miniapp::before,
+#page.miniapp::after {
+  width: 65%;
+}
+
+#page.wheels::before,
+#page.wheels::after {
+  width: 85%;
+}
+
+
+.logo {
+  position: fixed;
+  left: 145px;
+  top: 50px;
+  width: 90px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 29px;
+  font-family: cursive, 'Courier New', Courier, monospace;
+  background: linear-gradient(to right, #70B0EE 50%, #E4667D 50%);
+}
+
+nav {
+  position: fixed;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #E4667D;
+  display: flex;
+  width: 70%;
+  min-width: 800px;
+}
+nav > a {
+  flex: 1;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  font-family: cursive, 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: calc(100%/5);
+  height: 3px;
+  background: #E4667D;
+  transition: left .3s;
+}
+
+#page.about nav::after{
+  left: 0;
+}
+
+#page.component nav::after {
+  left: calc(1*100%/5)
+}
+
+#page.framework nav::after {
+  left: calc(2*100%/5)
+}
+
+#page.miniapp nav::after {
+  left: calc(3*100%/5)
+}
+
+#page.wheels nav::after {
+  left: calc(4*100%/5)
+}
+
+
+section {
+  display: flex;
+  height: 100vh;
+  padding: 200px 120px;
+}
+
+section main {
+  flex: 1;
+}
+
+section figure {
+  width: 350px;
+  margin-left: 80px;
+}
+
+section figure img {
+  width: 100%;
+}
+
+section h2 {
+  font-size: 30px;
+  color: #70B0EE;
+}
+
+section .labels {
+  color: #666;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+section .detail {
+  color: #666;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+section .detail p {
+  margin-top: 10px;
+  font-weight: 200;
+}
